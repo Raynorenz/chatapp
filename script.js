@@ -32,26 +32,29 @@ function loadMessages() {
   messagesRef.on('child_added', function(snapshot) {
     const message = snapshot.val();
     const messageElement = document.createElement('div');
+    const innerDiv = document.createElement('div'); // Create inner div
     const messageContent = document.createElement('div');
     const usernameElement = document.createElement('div');
     
     messageContent.textContent = message.text;
     usernameElement.textContent = message.username;
 
+    messageContent.classList.add('text');
+    usernameElement.classList.add('name');
+    
+    innerDiv.appendChild(usernameElement);
+    innerDiv.appendChild(messageContent);
+    messageElement.appendChild(innerDiv);
+
+    messageElement.classList.add('message');
     if (message.username === username) {
-      messageElement.classList.add('message', 'my-chat');
-      usernameElement.classList.add('name');
-      messageContent.classList.add('text');
+      messageElement.classList.add('my-chat');
     } else {
-      messageElement.classList.add('message', 'other-chat');
-      usernameElement.classList.add('name');
-      messageContent.classList.add('text');
+      messageElement.classList.add('other-chat');
     }
 
-    messageElement.appendChild(usernameElement);
-    messageElement.appendChild(messageContent);
-
     messagesContainer.appendChild(messageElement);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll to the latest message
   });
 }
 

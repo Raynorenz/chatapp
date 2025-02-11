@@ -6,4 +6,4 @@ document.getElementById('join-user').addEventListener('click', function() {
     } else {
         alert('Please enter a valid username');
     }
-});
+});//store local 
