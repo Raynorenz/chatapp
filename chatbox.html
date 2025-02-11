@@ -15,11 +15,11 @@
         <div class="screen chat-screen active">
             <div class="header">
                 <div class="logo">Chatroom</div>
-                <a href="login.html">
+                <a href="index.html">
                 <button id="exit-chat">Exit</button>
                 </a>   
             </div>
-            <div class="messages">
+            <div class="messages" id="messages">
                 <div class="message my-chat">
                     <div>
                         <div class="name">You</div>
@@ -36,9 +36,15 @@
 
             <div class="typebox">
                 <input type="text" id="message-input">
-                <button id="send-message"> Send </button>
+                <button id="send-message" > Send </button>
             </div>
         </div> 
     </div>
+    <!--firebase-->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="script.js"></script>
+    
   </body>
 </html>

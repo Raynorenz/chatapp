@@ -116,6 +116,7 @@ body{
 .chat-screen .messages .message {
     display: flex;
     padding: 10px;
+    
 }
 
 .chat-screen .messages .message > div {
@@ -165,3 +166,4 @@ body{
     cursor: pointer;
     color: #eee;
 }
+
